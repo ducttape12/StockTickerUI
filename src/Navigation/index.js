@@ -6,7 +6,7 @@ import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 export default class Navigation extends React.Component {
     render() {
         return (
-            <Navbar bg="dark" expand="lg">
+            <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="/"><FontAwesomeIcon icon={faChartLine} /> {this.props.brand}</Navbar.Brand>
             </Navbar>
         );
