@@ -14,14 +14,18 @@ export default class Search extends React.Component {
     }
 
     filterChange(filter) {
-        fetch(`https://localhost:44390/api/search?query=${filter}`)
-            .then(response => response.json())
-            .then(results => this.setState({searchResults: results}));
+        if(filter === '') {
+            this.setState({searchResults: []});
+        } else {
+            fetch(`https://localhost:44390/api/search?query=${filter}`)
+                .then(response => response.json())
+                .then(results => this.setState({searchResults: results}));
+        }
     }
 
     render() {
         return (
-            <div className="container container-padding">
+            <div>
                 <SearchFilter onChange={this.filterChange} />
                 <SearchResultsListing results={this.state.searchResults} />
             </div>

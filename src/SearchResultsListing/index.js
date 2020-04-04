@@ -3,12 +3,23 @@ import SearchResult from '../SearchResult';
 import PropTypes from 'prop-types';
 
 export default class SearchResultsListing extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.anyResults = this.anyResults.bind(this);
+    }
+
+    anyResults() {
+        return this.props.results.length > 0;
+    }
+
     render() {
         return (
             <div>
+                {this.anyResults() ? <p><small>Displaying the first 30 results</small></p> : ''}
                 {this.props.results.map(result => {
                     return (
-                    <SearchResult symbol={result.symbol} name={result.name} stockExchange={result.stockExchange} />
+                    <SearchResult key={result.symbol} symbol={result.symbol} name={result.name} stockExchange={result.stockExchange} />
                     );
                 })}
             </div>
