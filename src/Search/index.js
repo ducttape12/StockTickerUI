@@ -17,7 +17,7 @@ export default class Search extends React.Component {
         if(filter === '') {
             this.setState({searchResults: []});
         } else {
-            fetch(`https://localhost:44390/api/search?query=${filter}`)
+            fetch(`https://stocktickerwebapi.azurewebsites.net/api/search?query=${filter}`)
                 .then(response => response.json())
                 .then(results => this.setState({searchResults: results}));
         }

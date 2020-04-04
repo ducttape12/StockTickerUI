@@ -1,14 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Search from './Search';
 import Profile from './Profile';
 import Navigation from './Navigation';
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 
 function App() {
   return (
