@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -30,9 +32,9 @@ export default class Profile extends React.Component {
 
                 <p className="h2">Price: {this.state.profile.price}</p>
 
-                <p><a href={this.state.profile.website}>{this.state.profile.website}</a></p>
+                <p><a href={this.state.profile.website} target="_blank">{this.state.profile.website}</a></p>
 
-                <NavLink to="/" className="btn btn-primary float-right">Perform Another Search</NavLink>
+                <NavLink to="/" className="btn btn-primary float-right"><FontAwesomeIcon icon={faSearch} /> Perform Another Search</NavLink>
             </div>
         );
     }

@@ -29,7 +29,7 @@ export default class SearchFilter extends React.Component {
             <Form>
                 <Form.Group as={Row}>
                     <Form.Label column sm={2}>
-                        Stock Search
+                        Stock Ticker:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control type="text" placeholder="Symbol" onChange={this.filterChanged} />
