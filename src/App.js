@@ -9,10 +9,10 @@ function App() {
   return (
     <div>
       <Navigation brand="Simple Stock Ticker" />
-      <div className="container container-padding mt-3">
+      <div className="container container-padding mt-3 flex-shrink-3">
         <HashRouter>
-            <Route exact path="/" component={Search} />
-            <Route path="/profile/:symbol" component={Profile} />
+          <Route exact path="/" component={Search} />
+          <Route path="/profile/:symbol" component={Profile} />
         </HashRouter>
       </div>
     </div>
