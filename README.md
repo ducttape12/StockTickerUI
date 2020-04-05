@@ -1,6 +1,6 @@
-# Simple Stock Ticker
+# Simple Stock Ticker UI
 
-A simple stock ticker, written by Keith Ott.
+The UI of a simple stock ticker, written by Keith Ott.  Consumes the API exposed [in this Github repo](https://github.com/ducttape12/StockTickerWebApi).
 
 [See Keith Ott's resume here.](https://simplestockticker.keithott.com/ott-keith-resume-2020.pdf)
 
@@ -29,7 +29,7 @@ This frontend connects to a server hosted at [https://stocktickerwebapi.azureweb
 
 ## Demo
 
-Visit [https://simplestockticker.keithott.com](https://simplestockticker.keithott.com) to see this application in action!
+This application is available at [https://simplestockticker.keithott.com](https://simplestockticker.keithott.com).
 
 ## License
 
