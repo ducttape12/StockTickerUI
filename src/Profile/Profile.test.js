@@ -36,9 +36,9 @@ describe('<Profile />', () => {
         expect(wrapper.contains('Company Name')).toEqual(true);
         expect(wrapper.contains('Company Description')).toEqual(true);
         expect(wrapper.contains('Exchange')).toEqual(true);
-        expect(wrapper.contains(<img src='https://www.example.com/company.jpg' alt='Company Name' className="img-thumbnail"></img>)).toEqual(true);
+        expect(wrapper.contains(<img src='https://www.example.com/company.jpg' alt='Company Name' height={64} width={64} className="mr-3"></img>)).toEqual(true);
         expect(wrapper.contains('Company Industry')).toEqual(true);
-        expect(wrapper.contains(<p className="h2">Price: 1.23</p>)).toEqual(true);
+        expect(wrapper.contains(<p className="h2 text-center">Price: 1.23</p>)).toEqual(true);
         expect(wrapper.contains('COMP')).toEqual(true);
         expect(wrapper.contains('https://www.example.com')).toEqual(true);
         expect(wrapper.contains('Please wait... Loading...')).toEqual(false);
