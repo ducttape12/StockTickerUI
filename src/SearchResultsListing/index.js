@@ -15,7 +15,6 @@ export default class SearchResultsListing extends React.Component {
 
     render() {
         if (this.anyResults()) {
-            console.warn('there are results');
             return (
                 <div>
                     <p><small>Displaying the first 30 results</small></p>
