@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 export default class Navigation extends React.Component {
     render() {
@@ -11,4 +12,8 @@ export default class Navigation extends React.Component {
             </Navbar>
         );
     }
+}
+
+Navigation.propTypes = {
+    brand: PropTypes.string
 }

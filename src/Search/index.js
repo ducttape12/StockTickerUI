@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchFilter from '../SearchFilter';
 import SearchResultsListing from '../SearchResultsListing';
+import StockTickerClient from '../StockTickerClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,8 +22,7 @@ export default class Search extends React.Component {
             this.setState({searchResults: [], loading: false});
         } else {
             this.setState({loading: true});
-            fetch(`https://stocktickerwebapi.azurewebsites.net/api/search?query=${filter}`)
-                .then(response => response.json())
+            StockTickerClient.searchCompanies(filter)
                 .then(results => this.setState({searchResults: results, loading: false}));
         }
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import StockTickerClient from '../StockTickerClient';
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -18,8 +19,8 @@ export default class Profile extends React.Component {
 
         this.setState({ loading: true });
 
-        fetch(`https://stocktickerwebapi.azurewebsites.net/api/profile/${symbol}`)
-            .then(response => response.json())
+        StockTickerClient
+            .getProfile(symbol)
             .then(result => this.setState({ profile: result, loading: false }));
     }
 

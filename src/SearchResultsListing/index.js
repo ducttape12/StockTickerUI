@@ -14,19 +14,24 @@ export default class SearchResultsListing extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                {this.anyResults() ? <p><small>Displaying the first 30 results</small></p> : ''}
-                {this.props.results.map(result => {
-                    return (
-                    <SearchResult key={result.symbol} symbol={result.symbol} name={result.name} stockExchange={result.stockExchange} />
-                    );
-                })}
-            </div>
-        );
+        if (this.anyResults()) {
+            console.warn('there are results');
+            return (
+                <div>
+                    <p><small>Displaying the first 30 results</small></p>
+                    {this.props.results.map(result => {
+                        return (
+                            <SearchResult key={result.symbol} symbol={result.symbol} name={result.name} stockExchange={result.stockExchange} />
+                        );
+                    })}
+                </div>
+            );
+        } else {
+            return <></>;
+        }
     }
 }
 
 SearchResultsListing.propTypes = {
-    results: PropTypes.array
+    results: PropTypes.array.isRequired
 };
