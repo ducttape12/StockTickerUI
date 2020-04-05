@@ -22,7 +22,7 @@ jest.mock('../StockTickerClient', () => {
 
 const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+}
 
 describe('<Profile />', () => {
     it('renders without crashing', () => {
@@ -32,7 +32,7 @@ describe('<Profile />', () => {
     it('loads data from the endpoint for the specified ticker symbol', async () => {
         const wrapper = shallow(<Profile match={{ params: { id: 'AAPL' } }} />);
         await sleep(50)
-        
+
         expect(wrapper.contains('Company Name')).toEqual(true);
         expect(wrapper.contains('Company Description')).toEqual(true);
         expect(wrapper.contains('Exchange')).toEqual(true);
