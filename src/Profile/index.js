@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import StockTickerClient from '../StockTickerClient';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Media from 'react-bootstrap/Media';
+import Alert from 'react-bootstrap/Alert';
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -30,16 +34,29 @@ export default class Profile extends React.Component {
         } else {
             return (
                 <div>
-                    <img src={this.state.profile.image} alt={this.state.profile.companyName} className="img-thumbnail"></img>
-                    <h1 className="display-1">{this.state.profile.companyName}</h1>
-                    <p className="lead">
-                        {this.state.profile.description}
-                    </p>
-                    <p>{this.state.profile.symbol} on {this.state.profile.exchange} | {this.state.profile.industry} | <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></p>
+                    <Media>
+                        <img src={this.state.profile.image} alt={this.state.profile.companyName} height={64} width={64} className="mr-3"></img>
+                        <Media.Body>
+                            <h2>{this.state.profile.companyName}</h2>
+                            <p>{this.state.profile.symbol} on {this.state.profile.exchange} | {this.state.profile.industry} | <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></p>
+                        </Media.Body>
+                    </Media>
 
-                    <p className="h2">Price: {this.state.profile.price}</p>
+                    <Row className="justify-content-md-center my-2">
+                        <Col md={12} lg={6}>
+                            <Alert variant='info'>
+                                <p className="h2 text-center">Price: {this.state.profile.price}</p>
+                            </Alert>
+                        </Col>
+                    </Row>
 
-                    <NavLink to="/" className="btn btn-primary float-right"><FontAwesomeIcon icon={faSearch} /> Perform Another Search</NavLink>
+                    <p>{this.state.profile.description}</p>
+
+                    <Row className="justify-content-md-end mt-4">
+                        <Col sm={12} md={4}>
+                            <NavLink to="/" className="btn btn-primary btn-block"><FontAwesomeIcon icon={faSearch} /> Perform Another Search</NavLink>
+                        </Col>
+                    </Row>
                 </div>
             );
         }
