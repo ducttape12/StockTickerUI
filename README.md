@@ -2,8 +2,6 @@
 
 The UI of a simple stock ticker, written by Keith Ott.  Consumes the API exposed [in this Github repo](https://github.com/ducttape12/StockTickerWebApi).
 
-[See Keith Ott's resume here.](https://simplestockticker.keithott.com/ott-keith-resume-2020.pdf)
-
 ## Running
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
